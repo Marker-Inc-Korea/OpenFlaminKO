@@ -14,7 +14,7 @@
 # Dependencies
 - [ChromeDriver](https://chromedriver.chromium.org/downloads) 설치
 - [7-zip](https://www.7-zip.org/) 환경변수 등록
-- Pytorch >= 2.0 권장
+- [Pytorch](https://pytorch.org/) >= 2.0 권장
   
 # KO-LAION Dataset
 ```
