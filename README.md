@@ -27,7 +27,27 @@
 
 
 # Evaluation Code
+-
+```python
+# 50 epoch model
+from open_flamingo import create_model_and_transforms
 
+# Default setting
+model, image_processor, tokenizer = create_model_and_transforms(
+    clip_vision_encoder_path="ViT-L-14",
+    clip_vision_encoder_pretrained="openai",
+    lang_encoder_path="EleutherAI/polyglot-ko-1.3b", # PolyGlot 1.3B
+    tokenizer_path="EleutherAI/polyglot-ko-1.3b", # PolyGlot 1.3B
+    cross_attn_every_n_layers=1
+)
+
+# load checkpoint
+num = 51
+checkpoint_path = './OpenKyujinpie_v1/KO-LAION-1M/checkpoint_{}.pt'.format(num)
+print("Model path:",checkpoint_path)
+model.load_state_dict(torch.load(checkpoint_path), strict=False)
+model.eval() # Freeze
+```
 
 # Performance
 
