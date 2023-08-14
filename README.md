@@ -39,13 +39,14 @@ open_flamingo
 > Polyglot-KO-1.3b에서 실행이 됩니다. 5.8b 이상은 원하실 경우, 더 많은 컴퓨팅 자원이 필요합니다.  
   
 # Evaluation Code
-- 모델의 checkpoint는 아래에서 다운받으실 수 있습니다.  
+- 모델의 checkpoint는 아래에서 다운받으실 수 있습니다.
+    
 | Model | Dataset | Link |  
 | ------------- | ------------- | ------------- |  
 | `OpenFlaminKO-400K` | [KO-LAION-400K](Not) | [Checkpoint](Not) |  
 | `OpenFlaminKO-1M` | [KO-LAION-1M](Not) | [Checkpoint](Not) |  
 | `OpenFlaminKO-4M` | [KO-LAION-4M](Not) | [Checkpoint](Not) |  
-  
+   
 ```python
 # 50 epoch model
 from open_flamingo import create_model_and_transforms
