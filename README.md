@@ -43,7 +43,7 @@ open_flamingo
     
 | Model | Dataset | Link |  
 | ------------- | ------------- | ------------- |  
-| `OpenFlaminKO-400K` | [KO-LAION-400K](Not) | [Checkpoint](Not) |  
+| `OpenFlaminKO-400K` | [KO-LAION-400K](Not) | NaN |  
 | `OpenFlaminKO-1M` | [KO-LAION-1M](Not) | [Checkpoint](Not) |  
 | `OpenFlaminKO-4M` | [KO-LAION-4M](Not) | [Checkpoint](Not) |  
    
