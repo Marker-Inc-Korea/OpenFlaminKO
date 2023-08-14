@@ -9,9 +9,29 @@
 - MultiModal을 만들기 위해서는 엄청난 양의 데이터셋이 필요하지만, 현재 존재하는 multimodal dataset(i.e., [LAION](https://laion.ai/), [MMC4](https://github.com/allenai/mmc4))들은 대부분 영어 caption으로 이루어져 있고, 한국어의 비중이 거의 없기 때문에 한국어 Multimodal을 만드는 것을 사실상 쉽지 않은 도전임.
 - 기존의 LLM을 활용하여 multimodal로 만든 [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)로 부터 영감을 받아서, Polyglot-KO를 multimodal로 설계하고자 하는 마음이 생겨서 OpenFlminKO model를 만들기 시작함.
 - 기존 SOTA multimodal들은 한국어에 대한 성능이 매우 안 좋았기 때문에, 한국어 multimodal를 만들기 위한 첫걸음이라는 것에 의의를 둔다.
-- 본 연구는 (주)마커와 (주)미디어그룹사람과숲의 오픈소스 LLM 연구 컨소시엄에서 진행되었습니다.  
+- 본 연구는 (주)마커와 (주)미디어그룹사람과숲의 오픈소스 LLM 연구 컨소시엄에서 진행되었습니다.
+
+# Dependencies
+- [ChromeDriver](https://chromedriver.chromium.org/downloads) 설치
+- [7-zip](https://www.7-zip.org/) 환경변수 등록
+- Pytorch >= 2.0 권장
   
 # KO-LAION Dataset
+```
+translation
+├── sample                    
+│   ├── complete
+|   ├── shard_00001.tar # 번역할 tar 파일
+│   ├── shard_00002.tar
+│   └── ...
+├── chromedriver.exe
+├── txt_translation.py
+├── set_translation.py
+├── tar_txt_preprocessing.py
+└── ...
+```
+> 데이터 번역을 위한 파일 경로는 위와 같다.
+  
 - [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)에서 활용했던 LAION dataset을 기반으로 [DeepL](https://www.deepl.com/translator)을 통해서 번역을 시도하여 400만개 caption을 번역함.  
 - [Webdataset](https://github.com/webdataset/webdataset) 형식을 지원하기 때문에 LAION 데이터셋을 tar파일로 이용해야 합니다. 관련 코드는 [LAION_TRAIN](https://github.com/mlfoundations/open_flamingo/tree/main/open_flamingo/train)를 참고해주세요.  
 - HuggingFace에 [KO-LAION-SUBSET](Soon...)을 통해서 다운 받으실 수 있습니다. (Not update...)  
