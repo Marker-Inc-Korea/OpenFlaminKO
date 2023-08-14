@@ -34,13 +34,10 @@ open_flaminko
 > 데이터 경로는 위와 같이 설정합니다.  
   
 # Training Code
-- 
-```
-(Code coming soon...)
-```
-
+- [COLAB](https://colab.research.google.com/drive/1_TEJopoN7a4jeDOQZ0Dse4fIEXUFtYRC#scrollTo=l_YCMEVRj3rp) 코드를 통해서 실행해보실 수 있습니다.
+> 단, A100 GPU에서만 실행이 되기 때문에, 비용이 많이 발생합니다.  
+  
 # Evaluation Code
--
 ```python
 # 50 epoch model
 from open_flamingo import create_model_and_transforms
