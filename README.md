@@ -12,7 +12,7 @@
 - 본 연구는 (주)마커와 (주)미디어그룹사람과숲의 오픈소스 LLM 연구 컨소시엄에서 진행되었습니다.  
   
 # KO-LAION Dataset
-- [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)에서 활용했던 LAION dataset을 기반으로 DeepL을 통해서 번역을 시도하여 400만개 caption을 번역함.  
+- [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)에서 활용했던 LAION dataset을 기반으로 [DeepL](https://www.deepl.com/translator)을 통해서 번역을 시도하여 400만개 caption을 번역함.  
 - [Webdataset](https://github.com/webdataset/webdataset) 형식을 지원하기 때문에 LAION 데이터셋을 tar파일로 이용해야 합니다. 관련 코드는 [LAION_TRAIN](https://github.com/mlfoundations/open_flamingo/tree/main/open_flamingo/train)를 참고해주세요.  
 - HuggingFace에 [KO-LAION-SUBSET](Soon...)을 통해서 다운 받으실 수 있습니다.  
 ```
@@ -132,14 +132,15 @@ print("Generated text: ", tokenizer.decode(generated_text[0]))
 >Simple test code  
   
 # Performance
-
-- VQAv2 (VQA accuracy)
+- KO-VQAv2 (VQA accuracy)  
   
 | Model | Dataset | 0-shot |  
 | ------------- | ------------- | ------------- |  
 | `OpenFlaminKO-400K` | [KO-LAION-400K](Not) | NaN |  
 | `OpenFlaminKO-1M` | [KO-LAION-1M](Not) | NaN |  
 | `OpenFlaminKO-4M` | [KO-LAION-4M](Not) | NaN |  
+
+> Performance 측정을 위해 [VQAv2](https://visualqa.org/download.html)를 DeepL을 활용하여 번역함.
   
 # Acknowledgement
 [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)  
