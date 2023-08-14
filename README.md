@@ -14,12 +14,12 @@
 # KO-LAION Dataset
 - [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)에서 활용했던 LAION dataset을 기반으로 [DeepL](https://www.deepl.com/translator)을 통해서 번역을 시도하여 400만개 caption을 번역함.  
 - [Webdataset](https://github.com/webdataset/webdataset) 형식을 지원하기 때문에 LAION 데이터셋을 tar파일로 이용해야 합니다. 관련 코드는 [LAION_TRAIN](https://github.com/mlfoundations/open_flamingo/tree/main/open_flamingo/train)를 참고해주세요.  
-- HuggingFace에 [KO-LAION-SUBSET](Soon...)을 통해서 다운 받으실 수 있습니다.  
+- HuggingFace에 [KO-LAION-SUBSET](Soon...)을 통해서 다운 받으실 수 있습니다. (Not update...)  
 ```
 (Code coming soon...)
 ```
 > 위의 코드를 순차적으로 실행하여서 LAION dataset을 번역합니다.
-
+  
 ```
 open_flamingo
 ├── laion_data                    
@@ -39,7 +39,7 @@ open_flamingo
 > Polyglot-KO-1.3b에서 실행이 됩니다. 5.8b 이상은 원하실 경우, 더 많은 컴퓨팅 자원이 필요합니다.  
   
 # Evaluation Code
-- 모델의 checkpoint는 아래에서 다운받으실 수 있습니다.
+- 모델의 checkpoint는 아래에서 다운받으실 수 있습니다. (Not update...)  
     
 | Model | Dataset | Link |  
 | ------------- | ------------- | ------------- |  
@@ -131,7 +131,7 @@ print("Generated text: ", tokenizer.decode(generated_text[0]))
 ```
 >Simple test code  
   
-# Performance
+# Performance (Not update...)  
 - KO-VQAv2 (VQA accuracy)  
   
 | Model | Dataset | 0-shot |  
