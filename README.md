@@ -27,8 +27,7 @@ translation
 ├── chromedriver.exe
 ├── txt_translation.py
 ├── set_translation.py
-├── tar_txt_preprocessing.py
-└── ...
+└── tar_txt_preprocessing.py  
 ```
 > 데이터 번역을 위한 파일 경로는 위와 같다.
   
