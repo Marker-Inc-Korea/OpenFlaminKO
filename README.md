@@ -14,28 +14,29 @@
 # KO-LAION Dataset
 - [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)에서 활용했던 LAION dataset을 기반으로 DeepL을 통해서 번역을 시도하여 400만개 caption을 번역함.  
 - [Webdataset](https://github.com/webdataset/webdataset) 형식을 지원하기 때문에 LAION 데이터셋을 tar파일로 이용해야 합니다. 관련 코드는 [LAION_TRAIN](https://github.com/mlfoundations/open_flamingo/tree/main/open_flamingo/train)를 참고해주세요.  
-   
+- HuggingFace에 [KO-LAION-SUBSET](Soon...)을 통해서 다운 받으실 수 있습니다.  
 ```
 (Code coming soon...)
 ```
 > 위의 코드를 순차적으로 실행하여서 LAION dataset을 번역합니다.
 
 ```
-open_flaminko
+open_flamingo
 ├── laion_data                    
 │   ├── shard_00000.tar
 |   ├── shard_00001.tar       
 │   ├── shard_00002.tar
 │   └── ...
-├── open_flaminko
+├── open_flamingo
 ├── OpenKyujinpie_v1
 └── ...
 ```
 > 데이터 경로는 위와 같이 설정합니다.  
-  
+
 # Training Code
 - [COLAB](https://colab.research.google.com/drive/1_TEJopoN7a4jeDOQZ0Dse4fIEXUFtYRC#scrollTo=l_YCMEVRj3rp) 코드를 통해서 실행해보실 수 있습니다.
-> 단, A100 GPU에서만 실행이 되기 때문에, 비용이 많이 발생합니다.  
+> 단, A100 GPU에서만 실행이 되기 때문에, 비용이 많이 발생합니다.
+> Polyglot-KO-1.3b에서 실행이 됩니다. 5.8b 이상은 원하실 경우, 더 많은 컴퓨팅 자원이 필요합니다.  
   
 # Evaluation Code
 ```python
