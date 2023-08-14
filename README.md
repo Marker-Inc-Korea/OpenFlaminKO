@@ -1,6 +1,6 @@
 # OpenFlaminKO <🦩🇰🇷>
 ![OpenFlaminKO](https://github.com/Marker-Inc-Korea/OpenFlaminKO/assets/98331298/f45b07b7-f0bb-4a02-acff-19e20e933cfd)  
-- Polyglot-Ko을 활용한 image-text multimodal  
+- [Polyglot-Ko](https://huggingface.co/EleutherAI/polyglot-ko-1.3b)을 활용한 image-text multimodal  
   
 # Introduction
 ![Openflamingo 성능](https://github.com/Marker-Inc-Korea/OpenFlaminKO/assets/98331298/c27c8c32-e0a5-432d-b29e-c79d09e4b1b2)
@@ -133,7 +133,14 @@ print("Generated text: ", tokenizer.decode(generated_text[0]))
   
 # Performance
 
-
+- VQAv2 (VQA accuracy)
+  
+| Model | Dataset | 0-shot |  
+| ------------- | ------------- | ------------- |  
+| `OpenFlaminKO-400K` | [KO-LAION-400K](Not) | NaN |  
+| `OpenFlaminKO-1M` | [KO-LAION-1M](Not) | NaN |  
+| `OpenFlaminKO-4M` | [KO-LAION-4M](Not) | NaN |  
+  
 # Acknowledgement
 [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)  
 [Polyglot-KO](https://huggingface.co/EleutherAI/polyglot-ko-1.3b)  
