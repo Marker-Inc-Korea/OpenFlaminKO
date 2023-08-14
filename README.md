@@ -16,9 +16,12 @@
 - [Webdataset](https://github.com/webdataset/webdataset) 형식을 지원하기 때문에 LAION 데이터셋을 tar파일로 이용해야 합니다. 관련 코드는 [LAION_TRAIN](https://github.com/mlfoundations/open_flamingo/tree/main/open_flamingo/train)를 참고해주세요.  
 - HuggingFace에 [KO-LAION-SUBSET](Soon...)을 통해서 다운 받으실 수 있습니다. (Not update...)  
 ```
-(Code coming soon...)
+txt_translation.py # tar파일의 압축을 풀고, txt파일을 번역하는 과정
+set_translation.py # 번역이 잘 되었는지 확인하고, tar파일로 다시 압축하는 과정
+tar_txt_preprocessing.py # text 전처리 코드
 ```
 > 위의 코드를 순차적으로 실행하여서 LAION dataset을 번역합니다.
+> 데이터 전처리: 1) 이모지 제거 2) 한국어가 없는 caption 제거 3) empty sentence 제거  
   
 ```
 open_flamingo
