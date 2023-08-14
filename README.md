@@ -10,21 +10,34 @@
 - 기존의 LLM을 활용하여 multimodal로 만든 [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)로 부터 영감을 받아서, Polyglot-KO를 multimodal로 설계하고자 하는 마음이 생겨서 OpenFlminKO model를 만들기 시작함.
 - 기존 SOTA multimodal들은 한국어에 대한 성능이 매우 안 좋았기 때문에, 한국어 multimodal를 만들기 위한 첫걸음이라는 것에 의의를 둔다.
 - 본 연구는 (주)마커와 (주)미디어그룹사람과숲의 오픈소스 LLM 연구 컨소시엄에서 진행되었습니다.  
-
+  
 # KO-LAION Dataset
 - [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)에서 활용했던 LAION dataset을 기반으로 DeepL을 통해서 번역을 시도하여 400만개 caption을 번역함.  
-  
+- [Webdataset](https://github.com/webdataset/webdataset) 형식을 지원하기 때문에 LAION 데이터셋을 tar파일로 이용해야 합니다. 관련 코드는 [LAION_TRAIN](https://github.com/mlfoundations/open_flamingo/tree/main/open_flamingo/train)를 참고해주세요.  
+   
 ```
 (Code coming soon...)
 ```
+> 위의 코드를 순차적으로 실행하여서 LAION dataset을 번역합니다.
 
-
+```
+open_flaminko
+├── laion_data                    
+│   ├── shard_00000.tar
+|   ├── shard_00001.tar       
+│   ├── shard_00002.tar
+│   └── ...
+├── open_flaminko
+├── OpenKyujinpie_v1
+└── ...
+```
+> 데이터 경로는 위와 같이 설정합니다.  
+  
 # Training Code
 - 
 ```
 (Code coming soon...)
 ```
-
 
 # Evaluation Code
 -
@@ -42,13 +55,76 @@ model, image_processor, tokenizer = create_model_and_transforms(
 )
 
 # load checkpoint
-num = 51
-checkpoint_path = './OpenKyujinpie_v1/KO-LAION-1M/checkpoint_{}.pt'.format(num)
-print("Model path:",checkpoint_path)
+checkpoint_path = (Coming soon...)
+print("Model path:", checkpoint_path)
 model.load_state_dict(torch.load(checkpoint_path), strict=False)
 model.eval() # Freeze
 ```
+>Model implementation
+  
+```python
+# Image captioning by github example
+from PIL import Image
+import requests
+import torch
 
+"""
+Step 1: Load images
+"""
+demo_image_two = Image.open(
+    requests.get(
+        "http://images.cocodataset.org/test-stuff2017/000000028137.jpg",
+        stream=True
+    ).raw
+)
+
+query_image = Image.open(
+    requests.get(
+        "http://images.cocodataset.org/val2017/000000039769.jpg",
+        stream=True
+    ).raw
+)
+
+"""
+Step 2: Preprocessing images
+Details: For OpenFlamingo, we expect the image to be a torch tensor of shape
+ batch_size x num_media x num_frames x channels x height x width.
+ In this case batch_size = 1, num_media = 3, num_frames = 1,
+ channels = 3, height = 224, width = 224.
+"""
+vision_x = [image_processor(demo_image_two).unsqueeze(0), image_processor(query_image).unsqueeze(0)]
+vision_x = torch.cat(vision_x, dim=0)
+vision_x = vision_x.unsqueeze(1).unsqueeze(0)
+
+"""
+Step 3: Preprocessing text
+Details: In the text we expect an <image> special token to indicate where an image is.
+ We also expect an <|endofchunk|> special token to indicate the end of the text
+ portion associated with an image.
+ +) Translation by DeepL.
+"""
+tokenizer.padding_side = "left" # For generation padding tokens should be on the left
+lang_x = tokenizer(
+    ["<image>해당 이미지는 욕실 세면대입니다.<|endofchunk|><image>해당 이미지는"], # new version
+    return_tensors="pt",
+)
+
+
+"""
+Step 4: Generate text
+"""
+generated_text = model.generate(
+    vision_x=vision_x,
+    lang_x=lang_x["input_ids"],
+    attention_mask=lang_x["attention_mask"],
+    max_new_tokens=20,
+    num_beams=3, #
+)
+
+print("Generated text: ", tokenizer.decode(generated_text[0]))
+```
+>Simple test code  
+  
 # Performance
 
 
