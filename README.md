@@ -4,11 +4,11 @@
   
 # Introduction
 ![Openflamingo 성능](https://github.com/Marker-Inc-Korea/OpenFlaminKO/assets/98331298/c27c8c32-e0a5-432d-b29e-c79d09e4b1b2)
-- 최근 LLM열풍이 불고 있는 가운데, 한국어 LLM인 Polyglot-KO의 등장으로 국내에서도 ChatGPT와 유사한 LLM을 만들고자하는 시도와 노력들이 엄청 활발하게 이루어지고 있음.
-- Polyglot-KO를 LORA 방식을 활용하여 여러 NLP 분야에서 접목하고 있지만, multimodal로 이용되는 사례가 아직 나오지 않음.
-- MultiModal을 만들기 위해서는 엄청난 양의 데이터셋이 필요하지만, 현재 존재하는 multimodal dataset(i.e., [LAION](https://laion.ai/), [MMC4](https://github.com/allenai/mmc4))들은 대부분 영어 caption으로 이루어져 있고, 한국어의 비중이 거의 없기 때문에 한국어 Multimodal을 만드는 것을 사실상 쉽지 않은 도전임.
-- 기존의 LLM을 활용하여 multimodal로 만든 [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)로 부터 영감을 받아서, Polyglot-KO를 multimodal로 설계하고자 하는 마음이 생겨서 OpenFlminKO model를 만들기 시작함.
-- 기존 SOTA multimodal들은 한국어에 대한 성능이 매우 안 좋았기 때문에, 한국어 multimodal를 만들기 위한 첫걸음이라는 것에 의의를 둔다.
+- 최근 LLM열풍이 불고 있는 가운데, 한국어 LLM인 Polyglot-KO의 등장으로 국내에서도 ChatGPT와 유사한 LLM을 만들고자하는 시도와 노력들이 엄청 활발하게 이루어지고 있습니다.
+- Polyglot-KO를 LORA 방식을 활용하여 여러 NLP 분야에서 접목하고 있지만, multimodal로 이용되는 사례가 아직 나오지 않고 있어서, 이에 영감을 받아 진행하게 되었습니다!🙂
+- MultiModal을 만들기 위해서는 엄청난 양의 데이터셋이 필요하지만, 현재 존재하는 multimodal dataset(i.e., [LAION](https://laion.ai/), [MMC4](https://github.com/allenai/mmc4))들은 대부분 영어 caption으로 이루어져 있고, 한국어의 비중이 거의 없기 때문에 한국어 Multimodal을 만드는 것을 사실상 쉽지 않은 도전입니다..😭😭
+- 기존의 LLM을 활용하여 multimodal로 만든 [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)로 부터 영감을 받아서, Polyglot-KO를 multimodal로 설계하고자 하는 마음이 생겨서 OpenFlminKO model를 만들기 시작했습니다.
+- 기존 SOTA multimodal들은 한국어에 대한 성능이 매우 안 좋았기 때문에, 한국어 multimodal를 만들기 위한 첫걸음이라는 것에 의의를 두고 싶고, 충분한 데이터셋과 컴퓨팅 파워과 있다면 다시 도전하고 싶습니다..!
 - 본 연구는 (주)마커와 (주)미디어그룹사람과숲의 오픈소스 LLM 연구 컨소시엄에서 진행되었습니다.
 
 # Dependencies
@@ -61,14 +61,6 @@ open_flamingo
 > Polyglot-KO-1.3b에서 실행이 됩니다. 5.8b 이상은 원하실 경우, 더 많은 컴퓨팅 자원이 필요합니다.  
   
 # Evaluation Code
-- 모델의 checkpoint는 아래에서 다운받으실 수 있습니다. (Not update...)  
-    
-| Model | Dataset | Link |  
-| ------------- | ------------- | ------------- |  
-| `OpenFlaminKO-400K` | [KO-LAION-400K](Not) | NaN |  
-| `OpenFlaminKO-1M` | [KO-LAION-1M](Not) | [Checkpoint](Not) |  
-| `OpenFlaminKO-4M` | [KO-LAION-4M](Not) | [Checkpoint](Not) |  
-   
 ```python
 # 50 epoch model
 from open_flamingo import create_model_and_transforms
@@ -152,18 +144,7 @@ generated_text = model.generate(
 print("Generated text: ", tokenizer.decode(generated_text[0]))
 ```
 >Simple test code  
-  
-# Performance (Not update...)  
-- KO-VQAv2 (VQA accuracy)  
-  
-| Model | Dataset | 0-shot |  
-| ------------- | ------------- | ------------- |  
-| `OpenFlaminKO-400K` | [KO-LAION-400K](Not) | NaN |  
-| `OpenFlaminKO-1M` | [KO-LAION-1M](Not) | NaN |  
-| `OpenFlaminKO-4M` | [KO-LAION-4M](Not) | NaN |  
-
-> Performance 측정을 위해 [VQAv2](https://visualqa.org/download.html)를 DeepL을 활용하여 번역함.
-  
+   
 # Acknowledgement
 [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)  
 [Polyglot-KO](https://huggingface.co/EleutherAI/polyglot-ko-1.3b)  
