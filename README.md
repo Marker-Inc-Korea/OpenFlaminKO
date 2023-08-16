@@ -3,7 +3,7 @@
 - [Polyglot-Ko](https://huggingface.co/EleutherAI/polyglot-ko-1.3b)을 활용한 image-text multimodal  
   
 # Introduction
-![Openflamingo 성능](https://github.com/Marker-Inc-Korea/OpenFlaminKO/assets/98331298/c27c8c32-e0a5-432d-b29e-c79d09e4b1b2)
+![Openflamingo 성능](compare.jpg)
 - 최근 LLM열풍이 불고 있는 가운데, 한국어 LLM인 Polyglot-KO의 등장으로 국내에서도 ChatGPT와 유사한 LLM을 만들고자하는 시도와 노력들이 엄청 활발하게 이루어지고 있습니다.
 - Polyglot-KO를 LORA 방식을 활용하여 여러 NLP 분야에서 접목하고 있지만, multimodal로 이용되는 사례가 아직 나오지 않고 있어서, 이에 영감을 받아 진행하게 되었습니다!🙂
 - MultiModal을 만들기 위해서는 엄청난 양의 데이터셋이 필요하지만, 현재 존재하는 multimodal dataset(i.e., [LAION](https://laion.ai/), [MMC4](https://github.com/allenai/mmc4))들은 대부분 영어 caption으로 이루어져 있고, 한국어의 비중이 거의 없기 때문에 한국어 Multimodal을 만드는 것을 사실상 쉽지 않은 도전입니다..😭😭
