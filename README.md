@@ -144,7 +144,11 @@ generated_text = model.generate(
 print("Generated text: ", tokenizer.decode(generated_text[0]))
 ```
 >Simple test code  
-   
+
+# TODO
+= [ ] Share OpenFlaminKO Code
+- [x] Share colab code
+
 # Acknowledgement
 [OpenFlamingo](https://github.com/mlfoundations/open_flamingo)  
 [Polyglot-KO](https://huggingface.co/EleutherAI/polyglot-ko-1.3b)  
