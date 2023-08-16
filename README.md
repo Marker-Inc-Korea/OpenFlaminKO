@@ -1,5 +1,5 @@
 # OpenFlaminKO <🦩🇰🇷>
-![OpenFlaminKO](overview.jpg)  
+![OpenFlaminKO](overview.png)  
 - [Polyglot-Ko](https://huggingface.co/EleutherAI/polyglot-ko-1.3b)을 활용한 image-text multimodal  
   
 # Introduction
