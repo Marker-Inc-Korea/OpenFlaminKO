@@ -146,10 +146,10 @@ print("Generated text: ", tokenizer.decode(generated_text[0]))
 >Simple test code
 
 # Simple Example
-[example](result.jpg)
+![example](result.jpg)
 
 # TODO
-= [ ] Share OpenFlaminKO Code
+- [x] Share OpenFlaminKO Code
 - [x] Share colab code
 
 # Acknowledgement
