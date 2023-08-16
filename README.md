@@ -143,7 +143,10 @@ generated_text = model.generate(
 
 print("Generated text: ", tokenizer.decode(generated_text[0]))
 ```
->Simple test code  
+>Simple test code
+
+# Simple Example
+[example](result.jpg)
 
 # TODO
 = [ ] Share OpenFlaminKO Code
